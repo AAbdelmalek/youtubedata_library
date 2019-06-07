@@ -1,13 +1,13 @@
 Metadata-Version: 2.1
 Name: youtubedata
-Version: 1.0.4
-Summary: YouTube Data is a library that provides comprehensive scraping video metadata scraping. Results are returned in a dictionary and include likes, dislikes, views, publish dates and more.
+Version: 1.0.5
+Summary: YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary which contains likes, dislikes, views, published dates and more.
 Home-page: https://www.youtubedata.io
 Author: ofc
 Author-email: support@youtubedata.io
 License: UNKNOWN
 Description: ### YouTube Data
-        YouTube Data is a library that provides comprehensive scraping video metadata scraping. Results are returned in a dictionary and include likes, dislikes, views, publish dates and more.
+        YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary which contains likes, dislikes, views, published dates and more.
         
         Website: [youtubedata.io](https://www.youtubedata.io)
         
@@ -24,22 +24,22 @@ Description: ### YouTube Data
         ```
         
         ```python
-        youtubedata.get("UC9CoOnJkIBMdeijd9qYoT_g")
+        ariana_grande = youtubedata.get("UC9CoOnJkIBMdeijd9qYoT_g")
         ```
         
         ```python
-        youtubedata.get("Ariana Grande")
+        ariana_grande = youtubedata.get("Ariana Grande")
         ```
         
         ##### Keyword Arguments
         The second method is to explicity pass the keyword arguments *channel_code* and *best_match*. This way YouTube Data does not have to guess which is being provided.
         
         ```python
-        youtubedata.get(channel_code = "UC9CoOnJkIBMdeijd9qYoT_g")
+        ariana_grande = youtubedata.get(channel_code = "UC9CoOnJkIBMdeijd9qYoT_g")
         ```
         
         ```python
-        youtubedata.get(best_match = "Ariana Grande")
+        ariana_grande = youtubedata.get(best_match = "Ariana Grande")
         ```
         
         ### Progress
