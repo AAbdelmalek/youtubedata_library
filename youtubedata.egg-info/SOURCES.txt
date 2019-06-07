@@ -1,0 +1,8 @@
+README.md
+setup.py
+youtubedata/__init__.py
+youtubedata/youtubedata.py
+youtubedata.egg-info/PKG-INFO
+youtubedata.egg-info/SOURCES.txt
+youtubedata.egg-info/dependency_links.txt
+youtubedata.egg-info/top_level.txt

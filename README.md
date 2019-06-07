@@ -12,22 +12,26 @@ Usage is simple, the first method is to not pass any keyword arguments. In this 
 If a channel code was passed, YouTube Data will proceed straight to the scraping algorithm and extract the desired data. Otherwise, a step is added to find the channel that best matches the entered argument.
 
 ```python
-youtubedata("UC9CoOnJkIBMdeijd9qYoT_g")
+from youtubedata import youtubedata 
 ```
 
 ```python
-youtubedata("Ariana Grande")
+youtubedata.get("UC9CoOnJkIBMdeijd9qYoT_g")
+```
+
+```python
+youtubedata.get("Ariana Grande")
 ```
 
 ##### Keyword Arguments
 The second method is to explicity pass the keyword arguments *channel_code* and *best_match*. This way YouTube Data does not have to guess which is being provided.
 
 ```python
-youtubedata(channel_code = "UC9CoOnJkIBMdeijd9qYoT_g")
+youtubedata.get(channel_code = "UC9CoOnJkIBMdeijd9qYoT_g")
 ```
 
 ```python
-youtubedata(best_match = "Ariana Grande")
+youtubedata.get(best_match = "Ariana Grande")
 ```
 
 ### Progress

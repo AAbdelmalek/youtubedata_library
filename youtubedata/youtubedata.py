@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup as bs
 from numpy import nan
 
 # YouTube Data
-def youtubedata(*args, **kwargs):
+def get(*args, **kwargs):
     print("-------------------YouTube Data-------------------")   
     try:
         best_match = args[0]
@@ -27,8 +27,7 @@ def youtubedata(*args, **kwargs):
         best_match_binary = False
     
     if best_match_binary:
-        start_url = "https://www.youtube.com/results?search_query=" + best_match
-        
+        start_url = "https://www.youtube.com/results?search_query=" + best_match        
         get_youtube_url_response = requests.get(start_url)
 
         for x in range(10):
@@ -51,7 +50,6 @@ def youtubedata(*args, **kwargs):
         about_soup = bs(about_html.text, "lxml")
         
         if youtube_code[0:2] == "UC":
-
             youtube_code = raw_youtube_name_link.split("/")[2]
             playlist_link = "https://www.youtube.com" + "/playlist?list=UU" + youtube_code[2:] 
 
@@ -99,7 +97,6 @@ def youtubedata(*args, **kwargs):
     # Artist Information
     try:
         artist_name = about_soup.find("meta", property="og:title").get("content")
-
         subscribers = about_soup.find_all("span", class_="about-stat")[0].text
         subscribers_str = subscribers.split(" ")[0]
 
@@ -123,7 +120,6 @@ def youtubedata(*args, **kwargs):
             total_views = about_soup.find_all("span", class_="about-stat")[0].text
             total_views_str = total_views[3:len(total_views)].split(" ")[0]
             total_views_int = int(total_views[3:len(total_views)].split(" ")[0].replace(",",""))
-
             joined = about_soup.find_all("span", class_="about-stat")[1].text
             joined_temp = joined.split(" ")[1:4]
             joined_convert = convertDate(joined_temp)
@@ -154,7 +150,6 @@ def youtubedata(*args, **kwargs):
             playlist_names.append(name.text.replace("\n",""))
             
     extra_playlists = videos_soup.find_all("span",class_="branded-page-module-title")
-    
     playlist_names.append("Uploads")
 
     # Getting ALL Playlist URLS
@@ -188,12 +183,11 @@ def youtubedata(*args, **kwargs):
         first_video_within_playlist = first_video + "&" + playlist_link.split("?")[1]
 
         # Create Soup Object for First Video Inside Playlist
-        playlist_inside_request = requests.get(first_video_within_playlist) 
-
+        playlist_inside_request = requests.get(first_video_within_playlist)
         playlist_inside_soup = bs(playlist_inside_request.text, "lxml")
-        
         total_videos_in_playlist = int(playlist_inside_soup.find("span", id="playlist-length").text.replace(" videos","").replace(" video","").replace(",",""))
         total_videos_all = total_videos_all + total_videos_in_playlist
+
         if counter == 0:
             print("-------------------------------")
         print(f'Playlist "{playlist_names[counter]}" : {total_videos_all} videos')
@@ -259,7 +253,6 @@ def youtubedata(*args, **kwargs):
                         urls_all.append(original_url)
                 
                 urls_complete = round((((i+1)/total_videos_in_playlist)*100),1)
-                
                 print(f"{urls_complete}%", end="\r")
                 
             counter += 1
