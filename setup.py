@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="youtubedata",
-    version="1.0.5",
+    version="1.0.6",
     author="ofc",
     author_email="support@youtubedata.io",
-    description="YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary which contains likes, dislikes, views, published dates and more.",
+    description="YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary containing likes, dislikes, views, published dates and more.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://www.youtubedata.io",

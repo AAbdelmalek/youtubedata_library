@@ -1,10 +1,10 @@
 ### YouTube Data
-YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary which contains likes, dislikes, views, published dates and more.
+YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary containing likes, dislikes, views published dates and more.
 
 Website: [youtubedata.io](https://www.youtubedata.io)
 
 ### Usage
-##### Arguments
+##### Positional Arguments
 Usage is simple, the first method is to not pass any keyword arguments. In this case, the function will determine whether a channel code was passed. 
 
 *Channel Codes begin with UC. For example, Ariana Grande's channel code is UC9CoOnJkIBMdeijd9qYoT_g*.

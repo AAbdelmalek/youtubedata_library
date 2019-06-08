@@ -9,7 +9,7 @@ def get(*args, **kwargs):
     try:
         best_match = args[0]
     
-    except Exception as e:
+    except:
         for key, value in kwargs.items():
             if key == "youtube_code":
                 youtube_code = value                
@@ -54,7 +54,6 @@ def get(*args, **kwargs):
             playlist_link = "https://www.youtube.com" + "/playlist?list=UU" + youtube_code[2:] 
 
         elif youtube_code[0:2] != "UC":
-
             youtube_code_raw = about_soup.find("link", rel="canonical").get("href")
             youtube_code = youtube_code_raw.split("/")[4]
             playlist_link = "https://www.youtube.com" + "/playlist?list=UU" + youtube_code[2:]            
@@ -190,7 +189,7 @@ def get(*args, **kwargs):
 
         if counter == 0:
             print("-------------------------------")
-        print(f'Playlist "{playlist_names[counter]}" : {total_videos_all} videos')
+        print(f'Playlist "{playlist_names[counter]}" : {total_videos_in_playlist} videos')
         print("Getting URLs...")
         print("-------------------------------")
     
@@ -424,10 +423,7 @@ def get(*args, **kwargs):
             continue
     
     print("\nDone...")
-    print("--------------------------------------------------") 
-    
-    urls_to_date = urls_all[0:len(published_on)]
-    total_videos_all = len(urls_all)
+    print("--------------------------------------------------")
     
     dict_output = {"CHANNEL_NAME" : artist_name,
                    "CHANNEL_CODE" : youtube_code,
