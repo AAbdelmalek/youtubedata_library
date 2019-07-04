@@ -1,7 +1,6 @@
 import requests
 from datetime import datetime
 from bs4 import BeautifulSoup as bs
-from numpy import nan
 
 # YouTube Data
 def get(*args, **kwargs):
@@ -319,7 +318,7 @@ def get(*args, **kwargs):
             int_views = int(string_views)
             views.append(int_views)
 
-            #Duration
+            # Duration
             duration = video_soup.find("meta", itemprop="duration").get("content").replace("PT","").split("M")
             duration_mins = int(video_soup.find("meta", itemprop="duration").get("content").replace("PT","").split("M")[0])
             duration_secs = int(duration[1].replace("S",""))
@@ -351,7 +350,7 @@ def get(*args, **kwargs):
                 paid = video_soup.find("meta", itemprop="paid").get("content")
                 paid_list.append(paid)
             except:
-                paid_list.append(nan)
+                paid_list.append("")
 
             # Family Friendly
             family = video_soup.find("meta", itemprop="isFamilyFriendly").get("content")

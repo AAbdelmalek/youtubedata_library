@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: youtubedata
-Version: 1.0.6
+Version: 1.0.9
 Summary: YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary containing likes, dislikes, views, published dates and more.
 Home-page: https://www.youtubedata.io
 Author: ofc
@@ -48,4 +48,7 @@ Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Multimedia :: Video
 Description-Content-Type: text/markdown

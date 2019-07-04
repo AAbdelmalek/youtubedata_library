@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="youtubedata",
-    version="1.0.6",
+    version="1.0.9",
     author="ofc",
     author_email="support@youtubedata.io",
     description="YouTube Data provides comprehensive YouTube video metadata scraping. Results are returned in a dictionary containing likes, dislikes, views, published dates and more.",
@@ -13,9 +13,13 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://www.youtubedata.io",
     packages=setuptools.find_packages(),
+    install_requires=["requests","beautifulsoup4","lxml"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Multimedia :: Video"
     ],
 )
