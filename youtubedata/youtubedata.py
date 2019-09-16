@@ -95,12 +95,16 @@ def get(*args, **kwargs):
     # Artist Information
     try:
         artist_name = about_soup.find("meta", property="og:title").get("content")
-        subscribers = about_soup.find_all("span", class_="about-stat")[0].text
-        subscribers_str = subscribers.split(" ")[0]
-
+        subscribers = about_soup.find(class_="yt-subscription-button-subscriber-count-branded-horizontal").text
+        subscribers_str = str(subscribers)
+        
         try:
-            subscribers_int = int(subscribers.split(" ")[0].replace(",",""))
-
+            if subscribers_str[-1] == "M":
+                subscribers_int = int(float(subscribers_str.replace("M",""))*1000000)
+            elif subscribers_str[-1] == "K":
+                subscribers_int = int(float(subscribers_str.replace("K",""))*1000)
+            else:
+                subscribers_int = int(subscribers_str)
         except:
             subscribers_int = 0
 
