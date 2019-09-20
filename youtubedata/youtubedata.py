@@ -219,7 +219,11 @@ def get(*args, **kwargs):
                     playlist_inside_soup = bs(playlist_inside_request.text, "lxml")
                     last_shown_link = playlist_inside_soup.find_all("span", class_="index")[-1].find_next("a").get("href")
                     link_fix = "https://www.youtube.com" + last_shown_link
-                    last_video_index = int(playlist_inside_soup.find_all("span", class_="index")[-1].text.replace("\n        ","").replace("\n    ",""))
+                    try:
+                        last_video_index = int(playlist_inside_soup.find_all("span", class_="index")[-1].text.replace("\n        ","").replace("\n    ",""))
+                    except:
+                        pass
+
                     first_link = playlist_inside_soup.find("span", class_="index", text=f"\n        {i+1}\n    ")
 
                     if first_link is None:           
